@@ -1,0 +1,24 @@
+<div>
+  <form ng-submit="adding.enter(addData)">
+    <label for="title">Title:</label>
+    <input type="text" class="form-control" name="title" placeholder="title name.." ng-model="adding.addData.title"><br>
+
+    <label for="description">Description:</label>
+    <input type="text" class="form-control" name="des" placeholder="Description.." ng-model="adding.addData.description"><br>
+
+    <label for="img">Image Url</label>
+    <input type="text" class="form-control" name="image" placeholder="thumbnails.." ng-model="adding.addData.img_url"><br>
+
+    <label for="url">Url</label>
+    <input type="text" class="form-control" name="web_url" placeholder="website url" ng-model="adding.addData.url"><br>
+
+    <label for="Genre">Genre</label>
+    <select class="form-control" name="Gen" >
+      <option value="australia">Sports</option>
+      <option value="LifeStyle">LifeStyle</option>
+      <option value="World">World</option>
+    </select><br>
+  
+    <input type="submit" value="Add">
+  </form>
+</div>

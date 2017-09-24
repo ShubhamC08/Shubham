@@ -1,0 +1,14 @@
+<div class="album text-muted" ng-init="Sport()">
+      <div class="container">
+
+        <div class="row">
+          <div class="card" ng-repeat="sport in  sports">
+          	<h3>{{sport.title}}</h3>
+            <img src="{{sport.img_url}}" alt="Card image cap">
+            <p class="card-text">{{sport.description}}</p><br>
+            <a href="{{sport.url}}"><input type="button" name="Url" value="view"></a>   
+          </div>
+        </div>
+
+      </div>
+    </div>
