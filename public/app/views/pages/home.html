@@ -1,14 +1,25 @@
-<div class="album text-muted" ng-init="Sport()">
-      <div class="container">
+<div class="panel panel-default" ng-init="Sport()">
+      <div class="panel-heading">
+    <h3 class="panel-title">Latest News</h3>
+    </div>
+
+      <div class="panel-body">
 
         <div class="row">
-          <div class="card" ng-repeat="sport in  sports">
-          	<h3>{{sport.title}}</h3>
-            <img src="{{sport.img_url}}" alt="Card image cap">
-            <p class="card-text">{{sport.description}}</p><br>
-            <a href="{{sport.url}}"><input type="button" name="Url" value="view"></a>   
+          <div ng-repeat="sport in  sports">
+           <div class="col-md-6">
+           <div class="col-md-6">
+            <h4>{{sport.title}}</h4>
+            <p>{{sport.description}}</p>
+            <a class="btn btn-primary" href="{{sport.url}}">View full news</a>
+          </div>
+          <div class="col-md-6">
+            <img class="thumbnail" src="{{sport.img_url}}" height="300px" width="200px">
+          </div>  
           </div>
         </div>
 
       </div>
     </div>
+
+    
