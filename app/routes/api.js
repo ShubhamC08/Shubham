@@ -59,7 +59,7 @@ module.exports = function(router){
 		});
 
 	});
-	router.delete('/delete/:_id',function(req,res){
+	/*router.delete('/delete/:_id',function(req,res){
 		console.log("deleting ...");
 		var query ={_id: req.params._id};
 		Sport.remove(query,function(err,sport){
@@ -68,7 +68,7 @@ module.exports = function(router){
 			}
 			res.json(sport);
 		});
-	});
+	});*/
 	return router;
 
 }

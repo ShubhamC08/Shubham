@@ -38,13 +38,13 @@ angular.module('usersControllers',[])
 		var id = $routeParams.id;
 		$http.put('/api/edit/'+id,$scope.sport)
 	}
-})
-.controller('deleteController',function($scope,$http,$routeParams){
+});
+/*.controller('deleteController',function($scope,$http,$routeParams){
 	console.log("deleteController is running");
 	$scope.Destroy=function(id){
 		$http.delete('/api/delete/'+id).then(function(response){
 			window.location.href="/";
 		});
 	}
-});
+});*/
 

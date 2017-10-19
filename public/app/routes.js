@@ -23,8 +23,8 @@ angular.module('appRoutes',['ngRoute'])
 	})
 	.when('/details/:id',{
 		templateUrl:"app/views/pages/detail.html",
-		controller:"idController",
-		controller:'deleteController'
+		controller:"idController"
+		
 	})
 	.when('/edit/:id',{
 		templateUrl:"app/views/pages/edit.html",
