@@ -1,7 +1,7 @@
 <a href="/">Go Back</a>
 <div class="panel panel-default">
 <div class="panel-heading">
-    <h3 class="panel-title">Add Book</h3>
+    <h3 class="panel-title">Add News</h3>
   </div>
 <div>
   <form ng-submit="adding.enter(addData)">
@@ -18,8 +18,8 @@
     <input type="text" class="form-control" name="web_url" placeholder="website url" ng-model="adding.addData.url"><br>
 
     <label for="Genre">Genre</label>
-    <select class="form-control" name="Gen" >
-      <option value="australia">Sports</option>
+    <select class="form-control" name="Gen" ng-model="adding.addData.genres" >
+      <option value="Sports">Sports</option>
       <option value="LifeStyle">LifeStyle</option>
       <option value="World">World</option>
     </select><br>

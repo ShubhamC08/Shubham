@@ -7,6 +7,7 @@ module.exports = function(router){
 		news.description=req.body.description;
 		news.img_url=req.body.img_url;
 		news.url=req.body.url;
+		news.genres=req.body.genres;
 		news.save(function(err){
 		if(err){
 			res.send("Cannot completed!");
@@ -24,6 +25,50 @@ module.exports = function(router){
 		res.json(sports);
 	});
 });
+	router.get('/sports',function(req,res){
+		Sport.find({'genres':'Sports'},function(err,sports){
+			if(err)
+				throw err;
+			res.json(sports);
+		});
+	});
+	router.get('/details/:_id',function(req,res){
+			console.log('api is running');
+			Sport.findById(req.params._id,function(err,sport){
+				if(err)
+					console.log("error");
+				res.json(sport);
+			});
 
+	});
+	router.put('/edit/:_id',function(req,res){
+		console.log('editing is running in api files');
+		var id ={_id: req.params._id};
+		var news = req.body;
+		var update = {
+			title: news.title,//eq.body.title,
+			description: news.description,//req.body.description,
+			img_url : news.img_url,//req.body.img_url,
+			url: news.url,//req.body.url,
+			genres: news.genres//req.body.genres,
+		}
+		Sport.findOneAndUpdate(id,update,{},function(err,news){
+			if(err)
+				throw err;
+			res.json(news);
+		});
+
+	});
+	router.delete('/delete/:_id',function(req,res){
+		console.log("deleting ...");
+		var query ={_id: req.params._id};
+		Sport.remove(query,function(err,sport){
+			if(err){
+				throw err;
+			}
+			res.json(sport);
+		});
+	});
 	return router;
+
 }

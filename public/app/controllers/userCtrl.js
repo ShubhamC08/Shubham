@@ -13,5 +13,38 @@ angular.module('usersControllers',[])
 		});			
 }
 
+})
+.controller('sportController',function($scope,$http){
+	$scope.Sport=function(){
+		$http.get('/api/sports').then(function(response){
+			$scope.sports =response.data;
+		});
+	}
+})
+
+.controller('idController',function($scope,$http,$routeParams){
+	console.log('idController is running');
+	$scope.Single = function(){
+		var id = $routeParams.id;
+		$http.get('/api/details/'+id).then(function(response){
+			$scope.sport =response.data;
+		});
+	}
+	console.log('idController is running');
+})
+.controller('editController',function($scope,$http,$routeParams){
+	console.log("edit controller is running");
+	$scope.Edit = function(){
+		var id = $routeParams.id;
+		$http.put('/api/edit/'+id,$scope.sport)
+	}
+})
+.controller('deleteController',function($scope,$http,$routeParams){
+	console.log("deleteController is running");
+	$scope.Destroy=function(id){
+		$http.delete('/api/delete/'+id).then(function(response){
+			window.location.href="/";
+		});
+	}
 });
 

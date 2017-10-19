@@ -1,4 +1,4 @@
-<div class="panel panel-default" ng-init="Sport()">
+<div class="panel panel-default" ng-init="idController.Single()">
       <div class="panel-heading">
     <h3 class="panel-title">Latest News</h3>
     </div>
@@ -6,7 +6,7 @@
       <div class="panel-body">
 
         <div class="row">
-          <div ng-repeat="sport in  sports">
+          
            <div class="col-md-6">
            <div class="col-md-6">
             <h4>{{sport.title}}</h4>
@@ -18,8 +18,9 @@
           </div>  
           </div>
         </div>
-
-      </div>
+<div class="pull-right">
+  <a href="/edit/{{sport._id}}">Edit</a> |  <a href="/" ng-click="deleteController.Destroy(sport._id)">Delete</a>
+  </div> 
     </div>
 
     

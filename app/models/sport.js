@@ -21,6 +21,10 @@ var sportSchema=mongoose.Schema({
 		type:String,
 		required:true,
 		unique:true
+	},
+	genres:{
+		type:String,
+		required:true
 	}
 });
 

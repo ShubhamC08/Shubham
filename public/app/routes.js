@@ -12,6 +12,28 @@ angular.module('appRoutes',['ngRoute'])
 		controller:"addController",
 		controllerAs:"adding"
 	})
+	.when('/sports',{
+		templateUrl:"app/views/pages/sports.html",
+		controller:"sportController"
+
+	})
+	.when('/view',{
+		templateUrl:"app/views/pages/view.html",
+		controller:"displayController"
+	})
+	.when('/details/:id',{
+		templateUrl:"app/views/pages/detail.html",
+		controller:"idController",
+		controller:'deleteController'
+	})
+	.when('/edit/:id',{
+		templateUrl:"app/views/pages/edit.html",
+		controller:"editController"
+		
+	})
+	.when('/delete/:id',{
+		controller:'deleteController'
+	})
 	.otherwise('/',{
 		redirectTo:"/"
 	});
