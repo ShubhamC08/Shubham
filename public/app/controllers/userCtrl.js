@@ -21,6 +21,21 @@ angular.module('usersControllers',[])
 		});
 	}
 })
+.controller('worldController',function($scope,$http){
+	$scope.Sport=function(){
+		$http.get('/api/world').then(function(response){
+			$scope.sports =response.data;
+		});
+	}
+})
+.controller('entertainmentController',function($scope,$http){
+	$scope.Sport=function(){
+		$http.get('/api/entertainment').then(function(response){
+			$scope.sports =response.data;
+		});
+	}
+})
+
 
 .controller('idController',function($scope,$http,$routeParams){
 	console.log('idController is running');
@@ -38,13 +53,13 @@ angular.module('usersControllers',[])
 		var id = $routeParams.id;
 		$http.put('/api/edit/'+id,$scope.sport)
 	}
-});
-/*.controller('deleteController',function($scope,$http,$routeParams){
+})
+.controller('deleteController',function($scope,$http,$routeParams){
 	console.log("deleteController is running");
 	$scope.Destroy=function(id){
 		$http.delete('/api/delete/'+id).then(function(response){
 			window.location.href="/";
 		});
 	}
-});*/
+});
 

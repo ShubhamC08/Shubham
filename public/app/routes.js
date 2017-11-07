@@ -7,6 +7,10 @@ angular.module('appRoutes',['ngRoute'])
 		templateUrl:"app/views/pages/home.html",
 		controller:"displayController"
 	})
+	.when('/About',{
+		templateUrl:"app/views/pages/About.html",
+		controller:"displayController"
+	})	
 	.when('/add',{
 		templateUrl:"app/views/pages/add.html",
 		controller:"addController",
@@ -15,6 +19,16 @@ angular.module('appRoutes',['ngRoute'])
 	.when('/sports',{
 		templateUrl:"app/views/pages/sports.html",
 		controller:"sportController"
+
+	})
+	.when('/world',{
+		templateUrl:"app/views/pages/world.html",
+		controller:"worldController"
+
+	})
+	.when('/entertainment',{
+		templateUrl:"app/views/pages/entertainment.html",
+		controller:"entertainmentController"
 
 	})
 	.when('/view',{

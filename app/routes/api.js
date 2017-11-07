@@ -23,14 +23,28 @@ module.exports = function(router){
 		if(err)
 			throw err;
 		res.json(sports);
-	});
+	}).sort({$natural:-1});
 });
 	router.get('/sports',function(req,res){
 		Sport.find({'genres':'Sports'},function(err,sports){
 			if(err)
 				throw err;
 			res.json(sports);
-		});
+		}).sort({$natural:-1});
+	});
+	router.get('/world',function(req,res){
+		Sport.find({'genres':'World'},function(err,sports){
+			if(err)
+				throw err;
+			res.json(sports);
+		}).sort({$natural:-1});
+	});
+	router.get('/entertainment',function(req,res){
+		Sport.find({'genres':'Entertainment'},function(err,sports){
+			if(err)
+				throw err;
+			res.json(sports);
+		}).sort({$natural:-1});
 	});
 	router.get('/details/:_id',function(req,res){
 			console.log('api is running');
@@ -43,8 +57,9 @@ module.exports = function(router){
 	});
 	router.put('/edit/:_id',function(req,res){
 		console.log('editing is running in api files');
-		var id ={_id: req.params._id};
-		var news = req.body;
+		
+		var news = new Sport();
+		var id ={_id:req.params._id};
 		var update = {
 			title: news.title,//eq.body.title,
 			description: news.description,//req.body.description,
@@ -59,16 +74,16 @@ module.exports = function(router){
 		});
 
 	});
-	/*router.delete('/delete/:_id',function(req,res){
+	router.delete('/delete/:_id',function(req,res){
 		console.log("deleting ...");
-		var query ={_id: req.params._id};
-		Sport.remove(query,function(err,sport){
+		var query ={_id:req.params._id};
+		Sport.remove(query,{},function(err,sport){
 			if(err){
 				throw err;
 			}
 			res.json(sport);
 		});
-	});*/
+	});
 	return router;
 
 }

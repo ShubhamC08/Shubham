@@ -3511,8 +3511,8 @@ tbody.collapse.in {
   border-left: 4px solid transparent;
 }
 .dropup,
-.dropdown {
-  position: relative;
+.dropdown:hover .dropdown-menu {
+display: block;
 }
 .dropdown-toggle:focus {
   outline: 0;
@@ -3522,7 +3522,7 @@ tbody.collapse.in {
   top: 100%;
   left: 0;
   z-index: 1000;
-  display: none;
+  display: block;
   float: left;
   min-width: 160px;
   padding: 5px 0;
@@ -6753,5 +6753,8 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+.dropdown:hover .dropdown-menu {
+display: block;
 }
 /*# sourceMappingURL=bootstrap.css.map */
